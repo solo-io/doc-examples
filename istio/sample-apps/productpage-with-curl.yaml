@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productpage-v1
+  labels:
+    kind: deployment
+    app: productpage
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: productpage
+      version: v1
+  template:
+    metadata:
+      annotations:
+        sidecar.istio.io/proxyCPU: 100m
+        sidecar.istio.io/proxyMemory: 128Mi
+        proxy.istio.io/config: |
+          proxyStatsMatcher:
+            inclusionRegexps:
+            - .*ext_authz.*
+      labels:
+        app: productpage
+        version: v1
+        security.policy.gloo.solo.io/service_account: bookinfo-productpage
+        security.policy.gloo.solo.io/service_account_namespace: bookinfo
+    spec:
+      serviceAccountName: bookinfo-productpage
+      terminationGracePeriodSeconds: 30
+      containers:
+      - name: productpage
+        image: docker.io/istio/examples-bookinfo-productpage-v1:1.15.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        readinessProbe: # Curl is not installed on this image
+          httpGet:
+            scheme: HTTP
+            path: /health
+            port: 9080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+      # Include curl container for e2e testing, allows sending traffic mediated by the proxy sidecar
+      - name: curl
+        image: curlimages/curl:7.83.1
+        imagePullPolicy: IfNotPresent
+        command:
+          - "tail"
+          - "-f"
+          - "/dev/null"
+        readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          exec:
+            command:
+              - sh
+              - -c
+              - echo "ready"
+      # Include netcat container for e2e testing, allows sending traffic mediated by the proxy sidecar
+      - name: netcat
+        image: subfuzion/netcat
+        imagePullPolicy: IfNotPresent
+        command:
+          - "tail"
+          - "-f"
+          - "/dev/null"
+        readinessProbe:
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          exec:
+            command:
+              - sh
+              - -c
+              - echo "ready"
+      volumes:
+      - name: tmp
+        emptyDir: {}
