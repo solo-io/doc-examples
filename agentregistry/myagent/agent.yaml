@@ -1,0 +1,13 @@
+apiVersion: ar.dev/v1alpha1
+kind: Agent
+metadata:
+  name: myagent
+  version: 0.1.0
+spec:
+  source:
+     image: localhost:5001/myagent:latest
+  language: python
+  framework: adk
+  modelProvider: gemini
+  modelName: gemini-2.5-flash
+  description: myagent agent
