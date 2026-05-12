@@ -93,10 +93,7 @@ else
       {
             "Effect": "Allow",
             "Action": [
-               "ec2:DescribeInstances",
-               "ec2:DescribeTags",
-               "ec2:DescribeNetworkInterfaces",
-               "ec2:DescribeRegions"
+               "ec2:DescribeInstances"
             ],
             "Resource": "*"
       }
