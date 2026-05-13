@@ -33,7 +33,8 @@ platforms:
   # Required to enable multicluster support
   peering:
     enabled: true
-  ec2:
+  aws:
+    ec2Discovery: true
     accounts:
         # Custom domain to give to your EC2 workloads in the mesh
       - domain: ${EC2_DOMAIN}
