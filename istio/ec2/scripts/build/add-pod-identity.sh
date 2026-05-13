@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to add pod identity association for istiod service account to an existing EKS cluster
-# This allows istiod to assume the IAM role needed for ECS discovery
+# This allows istiod to assume the IAM role needed for EC2 discovery
 
 set -e
 
@@ -80,5 +80,5 @@ echo "Pod identity association setup complete!"
 echo "========================================="
 echo ""
 echo "The ${NAMESPACE}/${SERVICE_ACCOUNT} service account can now assume the ${ROLE_ARN} role."
-echo "This enables istiod to discover ECS services and tasks."
+echo "This enables istiod to discover EC2 instances."
 
