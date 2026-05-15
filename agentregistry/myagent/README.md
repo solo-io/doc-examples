@@ -46,3 +46,4 @@ Need MCP servers? Edit `agent.yaml` manually to append MCP entries under
 ```bash
 arctl apply -f agent.yaml
 ```
+

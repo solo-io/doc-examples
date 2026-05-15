@@ -17,3 +17,4 @@ RUN uv sync
 ENV OTEL_SERVICE_NAME=myagent
 
 CMD ["myagent"]
+
