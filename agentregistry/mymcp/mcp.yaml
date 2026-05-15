@@ -1,14 +1,13 @@
 apiVersion: ar.dev/v1alpha1
 kind: MCPServer
 metadata:
-    name: myorg/mymcp
-    version: 0.1.0
+  name: myorg/mymcp
 spec:
-    title: mymcp
-    description: mymcp MCP server
-    source:
-        package:
-            registryType: oci
-            identifier: localhost:5001/mymcp:latest
-            transport:
-                type: stdio
+  description: mymcp MCP server
+  source:
+    package:
+      identifier: localhost:5001/mymcp:latest
+      registryType: oci
+      transport:
+        type: stdio
+  title: mymcp
