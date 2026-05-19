@@ -1,12 +1,32 @@
 #!/bin/bash
 
-# Check if required environment variable is defined
-if [ -z "$AWS_ACCOUNT" ]; then
-  echo "Error: AWS_ACCOUNT is not defined."
-  exit 1
-fi
+for var in AWS_ACCOUNT CLUSTER_NAME AWS_REGION; do
+  if [ -z "${!var:-}" ]; then
+    echo "Error: $var is not set."
+    exit 1
+  fi
+done
 
 echo "Starting cleanup of Istio IAM roles and policies..."
+
+# Delete the pod identity association before removing the IAM role it references
+ASSOC_ID=$(aws eks list-pod-identity-associations \
+  --cluster-name "${CLUSTER_NAME}" \
+  --namespace istio-system \
+  --region "${AWS_REGION}" \
+  --query 'associations[?serviceAccount==`istiod`].associationId | [0]' \
+  --output text 2>/dev/null)
+
+if [ -n "${ASSOC_ID}" ] && [ "${ASSOC_ID}" != "None" ]; then
+  echo "Deleting pod identity association ${ASSOC_ID}..."
+  aws eks delete-pod-identity-association \
+    --cluster-name "${CLUSTER_NAME}" \
+    --association-id "${ASSOC_ID}" \
+    --region "${AWS_REGION}" > /dev/null
+  echo "Deleted pod identity association"
+else
+  echo "No pod identity association found for istio-system/istiod. Skipping."
+fi
 
 # Cleanup istiod role
 if aws iam get-role --role-name istiod > /dev/null 2>&1; then
