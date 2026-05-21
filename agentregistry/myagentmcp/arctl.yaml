@@ -1,0 +1,4 @@
+framework: adk
+language: python
+modelProvider: gemini
+modelName: gemini-2.5-flash

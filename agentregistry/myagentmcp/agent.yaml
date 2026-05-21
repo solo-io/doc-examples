@@ -1,0 +1,16 @@
+apiVersion: ar.dev/v1alpha1
+kind: Agent
+metadata:
+  name: myagentmcp
+spec:
+  source:
+    image: localhost:5001/myagentmcp:latest
+    repository:
+      url: https://github.com/solo-io/doc-examples
+      subfolder: agentregistry/myagentmcp      
+  modelProvider: gemini
+  modelName: gemini-2.5-flash
+  description: myagentmcp agent
+  mcpServers:
+    - kind: MCPServer
+      name: myorg/mymcp
