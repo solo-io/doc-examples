@@ -13,4 +13,4 @@ spec:
   description: myagentmcp agent
   mcpServers:
     - kind: MCPServer
-      name: myorg/mymcp
+      name: myorg/remotemcp
