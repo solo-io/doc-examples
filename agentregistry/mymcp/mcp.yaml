@@ -1,0 +1,18 @@
+apiVersion: ar.dev/v1alpha1
+kind: MCPServer
+metadata:
+  name: mymcp
+spec:
+  description: mymcp MCP server
+  source:
+    repository:
+      url: https://github.com/solo-io/doc-examples
+      subfolder: agentregistry/mymcp
+    package:
+      identifier: localhost:5001/mymcp:latest
+      registryType: oci
+      serverName: mymcp
+      transport:
+        type: http
+        port: 3000
+        path: /mcp

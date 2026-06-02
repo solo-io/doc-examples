@@ -1,17 +1,52 @@
 [project]
-name = "myagent"
-version = "0.1"
-description = "myagent agent"
-readme = "README.md"
-dependencies = [
-  # google-adk 1.25.1 bundles LiteLLM directly; later versions split it into
-  # the [extensions] extra which the kagent-adk:0.8.0-beta6 base image's
-  # uv-managed venv can't pick up via `pip install`. Pin to match the
-  # solo-io/agentregistry-dev-samples reference template.
-  "google-adk==1.25.1",
-  # Bedrock uses anthropic.AnthropicBedrock directly (see bedrock_model.py)
-  # rather than LiteLLM, because LiteLLM's bedrock path drops tool
-  # descriptions which the Bedrock API rejects.
-  "anthropic[bedrock]>=0.40",
+name = "mymcp"
+version = "0.1.0"
+description = "mymcp MCP server built with FastMCP"
+authors = [
+    {name = "Unknown Author"}
 ]
-requires-python = ">=3.13"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp==3.2.4",
+    "pydantic==2.12.5",
+    "pyyaml==6.0.3",
+    "python-dotenv==1.2.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[project.scripts]
+"mymcp-server" = "src.main:main"
+
+[tool.uv]
+dev-dependencies = [
+    "pytest==9.0.2",
+    "pytest-asyncio==1.3.0",
+    "black==26.1.0",
+    "mypy==1.19.1",
+    "ruff==0.15.1",
+    "types-PyYAML==6.0.12.20250915",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 
