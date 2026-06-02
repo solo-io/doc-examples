@@ -1,3 +1,4 @@
-framework: fastmcp
+framework: adk
 language: python
-port: 3000
+modelProvider: bedrock
+modelName: us.anthropic.claude-sonnet-4-6
