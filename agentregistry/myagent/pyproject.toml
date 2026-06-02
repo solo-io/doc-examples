@@ -9,5 +9,9 @@ dependencies = [
   # uv-managed venv can't pick up via `pip install`. Pin to match the
   # solo-io/agentregistry-dev-samples reference template.
   "google-adk==1.25.1",
+  # Bedrock uses anthropic.AnthropicBedrock directly (see bedrock_model.py)
+  # rather than LiteLLM, because LiteLLM's bedrock path drops tool
+  # descriptions which the Bedrock API rejects.
+  "anthropic[bedrock]>=0.40",
 ]
 requires-python = ">=3.13"

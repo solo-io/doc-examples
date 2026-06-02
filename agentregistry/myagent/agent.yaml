@@ -3,8 +3,14 @@ kind: Agent
 metadata:
   name: myagent
 spec:
-  description: myagent agent
-  modelName: gemini-2.5-flash
-  modelProvider: gemini
   source:
     image: localhost:5001/myagent:latest
+    repository:
+      url: https://github.com/solo-io/doc-examples
+      subfolder: agentregistry/myagent
+  modelProvider: bedrock
+  modelName: us.anthropic.claude-sonnet-4-6
+  description: myagent agent
+  mcpServers:
+    - kind: MCPServer
+      name: mymcp

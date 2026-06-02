@@ -1,4 +1,4 @@
 framework: adk
 language: python
-modelProvider: gemini
-modelName: gemini-2.5-flash
+modelProvider: bedrock
+modelName: us.anthropic.claude-sonnet-4-6

@@ -5,8 +5,8 @@ ADK Python agent wired for MCP tools and ready to publish through AgentRegistry.
 
 ## Model configuration
 
-- Provider: **gemini**
-- Model: **gemini-2.5-flash**
+- Provider: **bedrock**
+- Model: **us.anthropic.claude-sonnet-4-6**
 
 Update `myagent/agent.py` if you need to switch providers, add tools, or
 change the root instructions.
