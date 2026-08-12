@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if required environment variables are defined
-required_vars=("TASK_ROLE_ARN" "AWS_REGION" "CLUSTER_NAME" "OWNER_NAME")
+required_vars=("TASK_ROLE_ARN" "AWS_REGION" "CLUSTER_NAME")
 for var in "${required_vars[@]}"; do
   if [ -z "${!var}" ]; then
     echo "Error: $var is not defined."

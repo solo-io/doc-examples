@@ -98,7 +98,8 @@ else
                "ecs:DescribeServices",
                "ecs:ListServices",
                "ecs:DescribeTasks",
-               "ecs:ListTasks"
+               "ecs:ListTasks",
+               "ecs:DescribeContainerInstances"
             ],
             "Resource": "*"
       }
