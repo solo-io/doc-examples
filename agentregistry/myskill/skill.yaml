@@ -3,8 +3,8 @@ kind: Skill
 metadata:
   name: myskill
 spec:
-  title: myskill
-  description: A sample skill that demonstrates the hello-world skill template.
+  title: echo
+  description: A simple skill that echoes a message back to the user.
   source:
     repository:
       url: https://github.com/solo-io/doc-examples
