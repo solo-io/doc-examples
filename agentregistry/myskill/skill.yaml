@@ -3,5 +3,10 @@ kind: Skill
 metadata:
   name: myskill
 spec:
-  description: myskill skill
   title: myskill
+  description: A sample skill that demonstrates the hello-world skill template.
+  source:
+    repository:
+      url: https://github.com/solo-io/doc-examples
+      branch: main
+      subfolder: agentregistry/myskill
