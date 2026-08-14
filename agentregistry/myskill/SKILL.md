@@ -45,7 +45,7 @@ This demonstrates a simple workflow pattern.
 
 Execute the greeting script to demonstrate script usage:
 ```bash
-python3 scripts/hello_world.py --name "User"
+bash scripts/hello_world.sh --name "User"
 ```
 
 ### Step 2: Load Reference Material
@@ -75,21 +75,21 @@ Scripts (`scripts/`) contain executable code for deterministic operations.
 
 ### Example Script Usage
 
-The included `hello_world.py` demonstrates:
-- Command-line argument parsing
+The included `hello_world.sh` demonstrates:
+- Argument parsing
 - Error handling
 - Multiple output formats
 
 Execute with parameters:
 ```bash
 # Basic usage
-python3 scripts/hello_world.py --name "World"
+bash scripts/hello_world.sh --name "World"
 
 # JSON output format
-python3 scripts/hello_world.py --name "World" --format json
+bash scripts/hello_world.sh --name "World" --format json
 
 # With custom message
-python3 scripts/hello_world.py --name "World" --message "Welcome"
+bash scripts/hello_world.sh --name "World" --message "Welcome"
 ```
 
 ### Script Pattern
