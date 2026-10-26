@@ -34,7 +34,8 @@ platforms:
   peering:
     enabled: true
   # Configure istiod to perform automatic discovery of ECS resources in the AWS account
-  ecs:
+  aws:
+    ecsDiscovery: true
     accounts:
         # Custom domain to give to your ECS services in the mesh
       - domain: ${ECS_DOMAIN}
