@@ -42,7 +42,8 @@ ecs/
 │   ├── eks-echo.yaml
 │   ├── eks-shell.yaml
 │   ├── istio-base-values.yaml
-│   ├── istiod-values.yaml
+│   ├── istiod-values.yaml            # Istio 1.30 and later
+│   ├── istiod-values-1.28-1.29.yaml  # Istio 1.28 and 1.29
 │   ├── istio-cni-values.yaml
 │   └── ztunnel-values.yaml
 ├── scripts/

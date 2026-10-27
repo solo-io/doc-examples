@@ -11,12 +11,12 @@ for var in "${required_vars[@]}"; do
   fi
 done
 
+# Extract Istio version number (e.g., "1.28.1" from "1.28.1-solo")
+ISTIO_VERSION_NUM=$(echo $ISTIO_IMAGE | sed 's/-solo//')
+ISTIO_MAJOR_MINOR=$(echo $ISTIO_VERSION_NUM | cut -d. -f1,2)
+
 # Auto-detect and set REPO and HELM_REPO based on Istio version if not already set
 if [ -z "$HELM_REPO" ] || [ -z "$REPO" ]; then
-  # Extract Istio version number (e.g., "1.28.1" from "1.28.1-solo")
-  ISTIO_VERSION_NUM=$(echo $ISTIO_IMAGE | sed 's/-solo//')
-  ISTIO_MAJOR_MINOR=$(echo $ISTIO_VERSION_NUM | cut -d. -f1,2)
-  
   # Determine repo location based on Istio version
   # Istio 1.29+ uses the new repository location
   if [ "$(printf '%s\n' "1.29" "$ISTIO_MAJOR_MINOR" | sort -V | head -n1)" = "1.29" ]; then
@@ -37,6 +37,14 @@ if [ -z "$HELM_REPO" ] || [ -z "$REPO" ]; then
   fi
 fi
 
+# Select istiod values based on Istio version
+# Istio 1.30+ configures ECS discovery with platforms.aws; platforms.ecs is deprecated
+if [ "$(printf '%s\n' "1.30" "$ISTIO_MAJOR_MINOR" | sort -V | head -n1)" = "1.30" ]; then
+  ISTIOD_VALUES=manifests/istiod-values.yaml
+else
+  ISTIOD_VALUES=manifests/istiod-values-1.28-1.29.yaml
+fi
+
 echo "========================================="
 echo "Installing Istio ambient mesh components"
 echo "========================================="
@@ -44,6 +52,7 @@ echo ""
 echo "Cluster: $CLUSTER_NAME"
 echo "Istio Version: $ISTIO_IMAGE"
 echo "Helm Repository: $HELM_REPO"
+echo "Istiod Values: $ISTIOD_VALUES"
 echo ""
 
 # Step 1: Install istio-base
@@ -67,7 +76,7 @@ echo "Step 2/4: Installing istiod control plane..."
 helm upgrade --install istiod oci://${HELM_REPO}/istiod \
   --namespace istio-system \
   --version ${ISTIO_IMAGE} \
-  -f <(eval "echo \"$(cat manifests/istiod-values.yaml)\"")
+  -f <(eval "echo \"$(cat ${ISTIOD_VALUES})\"")
 
 if [ $? -eq 0 ]; then
   echo "✓ istiod installed successfully"
