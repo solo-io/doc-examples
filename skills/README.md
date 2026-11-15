@@ -16,7 +16,9 @@ npx skills add https://github.com/solo-io/doc-examples --skill agentgateway-ente
 
 For Claude Code, use `--agent claude-code`. The installer places the selected complete folder in the project's skill directory. Installing a skill does not install or configure Agentgateway.
 
-The skills read current public documentation for the selected runtime. Keep `SKILL.md`, `references/`, `scripts/`, `agents/`, and `package.json` together if installing manually. No private repository or internal support system is required by a customer.
+The skills read current public documentation for the selected runtime. Keep `SKILL.md`, `references/`, `scripts/`, and `package.json` together if installing manually. No private repository or internal support system is required by a customer.
+
+Keep the published skills client-neutral. Do not add optional `agents/openai.yaml` metadata to these or future skill packages.
 
 ## Maintaining the packages
 

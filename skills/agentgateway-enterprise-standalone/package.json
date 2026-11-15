@@ -10,12 +10,11 @@
     "path": "skills/agentgateway-enterprise-standalone",
     "commit": null,
     "state": "content-addressed",
-    "content_sha256": "cbc0a81d4bf8dfde31cb62710cbddd3a61811b55eb484e415262037d8c5eda2f"
+    "content_sha256": "6c46fe1574d9ed215d78d3992a1dfffce3dc19791ab9eebf43f6f82fbdb7d02b"
   },
   "documentation": "https://docs.solo.io/agentgateway/standalone/latest/",
   "files_sha256": {
     "SKILL.md": "b06a44aa583ee7534dc154b9a912194346a5f914c58347bdce58a96805354397",
-    "agents/openai.yaml": "2840615ee170fce0da5c7302b469007dc3cf714b84f6cf189dff328e31b87c54",
     "references/edition-boundaries.md": "f815b058e49f5d8158f9a9ee2b297c276a71a5efabcd16188a5f8ebb35823861",
     "references/enterprise-runtime.md": "090601cc094ef667cd09820093a6043d6843841ff9175502759d3815f7b93afa",
     "references/llm-setup.md": "30c56b75db3748d090780c5f18060190014f869f4827a8a948cd7fe1d5a40fdb",

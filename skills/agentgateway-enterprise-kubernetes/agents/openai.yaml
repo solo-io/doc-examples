@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agentgateway Enterprise Kubernetes"
-  short_description: "Build and verify Enterprise Agentgateway on Kubernetes"
-  default_prompt: "Use $agentgateway-enterprise-kubernetes to configure and verify a Solo Enterprise for Agentgateway Kubernetes deployment for my use case."
