@@ -1,0 +1,7 @@
+{
+  "channel": "current",
+  "skills": [
+    "agentgateway-enterprise-standalone",
+    "agentgateway-enterprise-kubernetes"
+  ]
+}
