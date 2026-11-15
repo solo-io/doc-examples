@@ -1,0 +1,16 @@
+# Enterprise standalone capability boundaries
+
+Verify the requested release and mode before making a capability claim. Enterprise scope authorizes using relevant licensed functionality; it does not call for an upsell, all optional products, or a feature inventory unrelated to the task.
+
+| Requirement | Source and decision rule |
+| --- | --- |
+| Native composable MCP | [Composable MCP](https://docs.solo.io/agentgateway/standalone/latest/documentation/mcp/composable.md) documents standalone `custom` targets and says OSS does not accept them. Use release-matched standalone syntax. The page explicitly says the Kubernetes composable UI wizard is not in the standalone UI. |
+| Search, code, and codeSearch tool modes | [Tool modes](https://docs.solo.io/agentgateway/standalone/latest/documentation/mcp/tool-mode.md) documents listener-level `mcp.toolMode`, session behavior, and the Enterprise boundary. Do not copy Kubernetes backend `entMcp` fields or enum casing. Verify runtime limits and authorization in the selected mode. |
+| Solo STS versus external-provider exchange | [Solo STS](https://docs.solo.io/agentgateway/standalone/latest/documentation/configuration/security/backend-authn/token-exchange/sts/about/) is a separate Enterprise service. General JWT validation, MCP tool authorization, and external-provider token exchange can also exist in OSS; do not classify whole categories as exclusive. Verify the actual grant/IdP and selected release before adding STS. |
+| Five client keys with USD budgets | Follow [llm-setup.md](llm-setup.md) for standalone identity, catalog and database requirements. A shared token pool or cost dashboard does not meet five independent dollar allowances. This capability also has OSS standalone documentation; do not label it universally Enterprise-only. |
+| Standalone Helm versus controller | Hosting the standalone process in Kubernetes does not enable controller CRDs, Kubernetes management-UI workflows, or controller-specific budget resources. Keep the requested configuration model. |
+| UI and telemetry | The [standalone UI](https://docs.solo.io/agentgateway/standalone/latest/documentation/setup/ui/launch-ui.md) depends on runtime listeners/storage. It is not proof of a deployed Enterprise management plane, persistent telemetry, or the Kubernetes UI's features. |
+
+Describe each result as verified native behavior, a separately operated integration, or an unverified/unavailable requirement. If an OSS alternative is relevant to an explicit comparison, cite its own mode/release and explain the concrete difference without unsupported parity, delivery-time, or support-contract claims. If a requested Enterprise feature is unavailable in this standalone release, state the gap rather than silently switching modes or upgrading.
+
+For native composable MCP, keep the target resource name separate from a code-mode function identifier. Check the selected runtime’s target-name validation; do not assume that callable code identifiers are valid target resource names. Validate the complete intended target configuration, including resources that will be loaded from the database, rather than only an empty Helm baseline. Discover the callable function signature through the selected tool mode instead of deriving it from the target name by assumption.

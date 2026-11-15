@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "name": "agentgateway-enterprise-kubernetes",
+  "channel": "current",
+  "edition": "enterprise",
+  "mode": "kubernetes",
+  "python_requires": ">=3.10",
+  "source": {
+    "repository": "https://github.com/solo-io/doc-examples",
+    "path": "skills/agentgateway-enterprise-kubernetes",
+    "commit": null,
+    "state": "content-addressed",
+    "content_sha256": "92603168a39141e3ef1fac4d86945a11bd8e2f336d00954d88586acc82cdfbbe"
+  },
+  "documentation": "https://docs.solo.io/agentgateway/kubernetes/latest/",
+  "files_sha256": {
+    "SKILL.md": "5b401b16547d496cb23d4fefb6fb626391ea10ca7e2c5de3e54a42b763db7a18",
+    "agents/openai.yaml": "a950a1474c961e1f213362bffe992213c0043813fe6e220d3b256e5059a286a1",
+    "references/deployment.md": "59547430e11fa5a5ffa7bc61cb27fb1fffc1872b37200210f201a947a2db1212",
+    "references/edition-boundaries.md": "27ada2709b31a85a49c2d106752434bf7314d876fb626234b8627e44af72de94",
+    "references/llm-setup.md": "d9419a87e61034ef72fd07d1bd1a0be73a92c46ce2ca08447a989a3a59cd0fd5",
+    "references/sources.md": "112e1884251f9a9cc100ffc63995121d090368e3ffbe812adadc70afb36685fa",
+    "references/verification-helpers.md": "bc60ca2b59394214ec4ce6ff10ca3ff922d4aa2666ce75345f0e4aa8c0ba4477",
+    "references/verification.md": "6fcc61dea62e2b3f9fe67fe281469b454925641ff950628de26b15cc45315b03",
+    "scripts/verify.py": "e3ed965f7a9709eca7a5aa1991ff11454f0cea0f747829ad7bb2c879a7ea2b89"
+  }
+}

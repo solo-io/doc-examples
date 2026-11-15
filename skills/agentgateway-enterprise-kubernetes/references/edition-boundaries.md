@@ -1,0 +1,15 @@
+# Edition and mode boundaries
+
+Read for comparisons or when adapting another distribution's example. verify the task's release before applying it. An Enterprise resource name does not establish exclusivity of a feature category.
+
+| Boundary | Decision |
+| --- | --- |
+| Standalone Helm versus Kubernetes controller | A mounted standalone file and a controller reconciling Gateway API are different models. Use the skill for the requested configuration model, independent of hosting. |
+| Native JWT and MCP tool authorization | Check the [OSS JWT](https://agentgateway.dev/docs/kubernetes/latest/documentation/security/jwt/setup.md) and [tool access](https://agentgateway.dev/docs/kubernetes/latest/documentation/mcp/tool-access.md) docs before describing them as Enterprise-only or building a custom service. Test forbidden direct invocation, not only discovery filtering. |
+| Token exchange | Identify the exact IdP/grant and distinguish external-provider exchange from Solo STS. Verify mode-specific docs; neither an Enterprise example nor a generic OBO label proves exclusivity or parity. |
+| Dollar accounting and quotas | Standalone budgets, OSS Kubernetes token quotas, and Enterprise Kubernetes budget resources are different implementation paths. Follow [llm-setup.md](llm-setup.md); accounting/estimation is not blocking enforcement. |
+| Composable MCP | [Enterprise Kubernetes composable MCP](https://docs.solo.io/agentgateway/kubernetes/latest/documentation/mcp/composable.md) uses Enterprise backends and offers a management-UI wizard. [Standalone composable MCP](https://docs.solo.io/agentgateway/standalone/latest/documentation/mcp/composable.md) uses standalone custom targets and explicitly lacks that wizard. Do not copy the YAML or UI promises between modes. |
+| Search/code tool modes | [Enterprise Kubernetes code mode](https://docs.solo.io/agentgateway/kubernetes/latest/documentation/mcp/tool-mode/code-mode.md) documents backend `entMcp` configuration. [Standalone tool modes](https://docs.solo.io/agentgateway/standalone/latest/documentation/mcp/tool-mode.md) use listener-level `mcp.toolMode` and state that OSS behaves as standard. Check enum casing, scope, client/session behavior and execution limits at the selected release. |
+| UI | [OSS controller UI](https://agentgateway.dev/docs/kubernetes/latest/documentation/observability/ui.md) is read-only. [Enterprise management UI](https://docs.solo.io/agentgateway/kubernetes/latest/documentation/install/ui/setup.md) is a separately enabled controller-chart component with its own prerequisites. Neither is the standalone editable UI. |
+
+Within an Enterprise request, use the supported capabilities that meet the requirement; distinguish licensed functionality, inherited OSS behavior, optional components, and unverified support. Do not sell an upgrade or imply that an Enterprise license enables every adjacent Solo product. If a feature is unavailable in the selected mode/version, report that limit instead of silently installing a newer release or adding a custom service.

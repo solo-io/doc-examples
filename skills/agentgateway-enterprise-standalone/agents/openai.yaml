@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentgateway Enterprise Standalone"
+  short_description: "Build and verify Enterprise standalone Agentgateway"
+  default_prompt: "Use $agentgateway-enterprise-standalone to configure and verify a licensed standalone Agentgateway deployment for my use case."
