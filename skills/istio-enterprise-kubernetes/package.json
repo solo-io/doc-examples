@@ -4,7 +4,6 @@
   "channel": "current",
   "edition": "enterprise",
   "mode": "kubernetes",
-  "python_requires": ">=3.10",
   "source": {
     "repository": "https://github.com/solo-io/doc-examples",
     "path": "skills/istio-enterprise-kubernetes",

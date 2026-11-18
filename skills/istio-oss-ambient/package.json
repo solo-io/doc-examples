@@ -4,7 +4,6 @@
   "channel": "current",
   "edition": "oss",
   "mode": "ambient-kubernetes",
-  "python_requires": ">=3.10",
   "source": {
     "repository": "https://github.com/solo-io/doc-examples",
     "path": "skills/istio-oss-ambient",
