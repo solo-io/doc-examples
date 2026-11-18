@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "name": "istio-oss-ambient",
+  "channel": "current",
+  "edition": "oss",
+  "mode": "ambient-kubernetes",
+  "python_requires": ">=3.10",
+  "source": {
+    "repository": "https://github.com/solo-io/doc-examples",
+    "path": "skills/istio-oss-ambient",
+    "commit": null,
+    "state": "content-addressed",
+    "content_sha256": "9c692e6ca98401ddbce99d8b62b0177dfd11ac19845534f9c45e2ec9873a59a7"
+  },
+  "documentation": "https://ambientmesh.io/docs/",
+  "files_sha256": {
+    "SKILL.md": "084c1b260a667614764adca6b70e70580b9b3da566ea0207dfc604cd974a4513",
+    "references/deployment.md": "d140670134d4ce8310dd613a018534ce2570c5170a69a84f9ae7ebc5b987c012",
+    "references/sources.md": "6e1b944c1f9c758f62356ba7c9a1e4c49b570bd697170e9d9a591b552bd9da91",
+    "references/verification.md": "90fd83f69ad6c49b077b2444d5e0bf7aab9958c7dce45e4120764bb8f007314f"
+  }
+}

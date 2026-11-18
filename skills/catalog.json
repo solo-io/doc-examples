@@ -2,6 +2,8 @@
   "channel": "current",
   "skills": [
     "agentgateway-enterprise-standalone",
-    "agentgateway-enterprise-kubernetes"
+    "agentgateway-enterprise-kubernetes",
+    "istio-oss-ambient",
+    "istio-enterprise-kubernetes"
   ]
 }
