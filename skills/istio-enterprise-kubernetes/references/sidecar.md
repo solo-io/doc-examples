@@ -6,4 +6,6 @@ For routing or policy, trace source sidecar → destination sidecar or gateway a
 
 For multicluster, use the selected release's [sidecar multicluster guide](https://docs.solo.io/istio/latest/sidecar/setup/multicluster/default/manual/). Record each context, cluster identity, network, certificates, remote secrets, gateways, and routing scope. Verify the license tier and cross-cluster trust before modifying links. Avoid treating a healthy single-cluster sidecar as proof of a working multicluster mesh.
 
+If the customer requests a UI, consult the selected release's [Gloo UI guidance](https://docs.solo.io/istio/latest/ui/gloo-ui/) for sidecar meshes. Do not apply the ambient Solo UI installation guide to a sidecar setup.
+
 For an explicitly requested migration to ambient, read the release-matched [migration guide](https://docs.solo.io/istio/latest/setup/install/migrate/) and plan coexistence and rollback. Test representative traffic through every phase before removing sidecars or legacy policy.

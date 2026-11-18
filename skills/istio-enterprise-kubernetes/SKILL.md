@@ -1,6 +1,6 @@
 ---
 name: istio-enterprise-kubernetes
-description: Configure, deploy, troubleshoot, and verify Solo Enterprise for Istio on Kubernetes in ambient or sidecar mode, including licensed mesh features and optional Solo UI. Use for Enterprise Istio work, not community Istio installations.
+description: Configure, deploy, troubleshoot, and verify Solo Enterprise for Istio on Kubernetes in ambient or sidecar mode, including licensed mesh features and mode-appropriate UI options. Use for Enterprise Istio work, not community Istio installations.
 ---
 
 # Solo Enterprise for Istio
@@ -28,7 +28,7 @@ If `https://search.solo.io/mcp` is configured, it can locate public docs; discov
 - Inspect all targeted clusters, Helm releases, GitOps sources, CRDs, Gateway API, Istio revisions, control plane and data plane versions, namespace labels, and current service identities before choosing a change.
 - Render the release-matched Solo charts and review the diff. Preserve existing values and upgrade order. CRDs, webhooks, CNI, GatewayClasses, certificate roots, and cluster links can affect workloads outside one namespace.
 - Map the requested traffic to source workload, destination, proxy layer, policy attachment, and expected result. For ambient, distinguish ztunnel L4 enforcement from waypoint L7 enforcement. For sidecar, verify injection or revision and the proxy that receives policy. Use the selected release's syntax.
-- When a Solo UI is requested, treat it as a separate management-plane installation. Use the documented license and identity setup; recommend an external IdP with mapped RBAC roles for shared access. The built-in test IdP or broad default access is suitable only for a deliberately temporary test. Verify the UI's actual accessible URL and the logged-in user's permissions before reporting success.
+- When a UI is requested, use the selected release's mode-specific UI guidance. Solo UI is an ambient management-plane option that requires an Enterprise-level license; check its feature maturity in that release. For sidecar, check the documented Gloo UI path. Recommend an external IdP with mapped RBAC roles for shared access. The Solo UI built-in test IdP signs visitors in as admin, so keep it on a port-forward or trusted network for a deliberately temporary test. Verify the actual accessible URL and the logged-in user's permissions before reporting success.
 - For multicluster work, preserve the trust model and give every context an explicit cluster name. Verify the cluster IDs used by Istio and any UI labels match the intended topology. Apply only to the authorized clusters and use a scoped rollback; do not delete shared certificates, links, CRDs, releases, or telemetry data for convenience.
 
 ## Verify and hand over

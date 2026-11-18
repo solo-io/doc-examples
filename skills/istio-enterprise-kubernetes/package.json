@@ -9,13 +9,13 @@
     "path": "skills/istio-enterprise-kubernetes",
     "commit": null,
     "state": "content-addressed",
-    "content_sha256": "36af1fd4ad6def46d95c254596b80263a9d406734251af59877c84417ed5d36a"
+    "content_sha256": "c01d6457f7eca20e089a8cb23b49792fbb9b8ac973470de90f839498e2206734"
   },
   "documentation": "https://docs.solo.io/istio/latest/",
   "files_sha256": {
-    "SKILL.md": "35382fa3f36aa55a9d82a1bc85bb413944fc0d828b9f15a23f30485890762ad4",
+    "SKILL.md": "e53232b1d6ed16c29ed34808838f7730df62f7d94f6de28a8605f12831194f16",
     "references/ambient.md": "66867916b87558d4c7d4c01e6b697df7c9cb84d6f2398aa5c5dfd7cd8b8a12f4",
-    "references/sidecar.md": "6922ba44202732ec8e6469e6e45c43214d3fe57d9e1006f8a116a15a00ad850f",
+    "references/sidecar.md": "0e9314413d5902bd1450afc23ed86db1c1cd252f74549a1a2fec350fc16d6b8a",
     "references/sources.md": "1f6df51a96b32369d27391bcc4b792ab32bb98e251ce0fef78a1770ed759021a",
     "references/verification.md": "7e1637afb3acf5b8ef27a308cf04135a72cff281354f9bde323bfff8a7925de7"
   }
