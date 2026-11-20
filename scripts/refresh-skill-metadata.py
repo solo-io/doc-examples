@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refresh or check the content fingerprints of Enterprise Agentgateway skills."""
+"""Refresh or check the content fingerprints of public customer skills."""
 import argparse
 import hashlib
 import json
@@ -20,8 +20,8 @@ def main() -> None:
     args = parser.parse_args()
     catalog = json.loads(CATALOG.read_text())
     for name in catalog['skills']:
-        if name not in ('agentgateway-enterprise-standalone', 'agentgateway-enterprise-kubernetes'):
-            raise SystemExit(f'Unexpected skill in catalog: {name}')
+        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', name):
+            raise SystemExit(f'Invalid skill name in catalog: {name}')
         folder = ROOT / 'skills' / name
         path = folder / 'package.json'
         if not re.search(rf'^name: {re.escape(name)}\s*$', (folder / 'SKILL.md').read_text(), re.M):
@@ -55,7 +55,7 @@ def main() -> None:
                 raise SystemExit(f'Stale package metadata: {path.relative_to(ROOT)}')
         else:
             path.write_text(json.dumps(expected, indent=2) + '\n')
-    print(f"{'Checked' if args.check else 'Refreshed'} {len(catalog['skills'])} Enterprise skill identities")
+    print(f"{'Checked' if args.check else 'Refreshed'} {len(catalog['skills'])} skill identities")
 
 
 if __name__ == '__main__':

@@ -1,0 +1,22 @@
+{
+  "schema_version": 2,
+  "name": "istio-enterprise-kubernetes",
+  "channel": "current",
+  "edition": "enterprise",
+  "mode": "kubernetes",
+  "source": {
+    "repository": "https://github.com/solo-io/doc-examples",
+    "path": "skills/istio-enterprise-kubernetes",
+    "commit": null,
+    "state": "content-addressed",
+    "content_sha256": "7e5d8cdf3f3c575a58a2d3d23ffd6effad9cad2be9509ab3e99f93bae2cad1f0"
+  },
+  "documentation": "https://docs.solo.io/istio/latest/",
+  "files_sha256": {
+    "SKILL.md": "af01980c0b97537cc58b08873c7fcb8044a32a2e69b5508517aba87a73cf00d9",
+    "references/ambient.md": "a0971cf10565c364dcf2b8e5bccdd816604ed217d31d0d206d8efdd8dc2d715d",
+    "references/sidecar.md": "0e9314413d5902bd1450afc23ed86db1c1cd252f74549a1a2fec350fc16d6b8a",
+    "references/sources.md": "05bea46f244fe6c16e7fcabfb3dce86e180f596cb8ceddb423691ba1d5c18390",
+    "references/verification.md": "7e1637afb3acf5b8ef27a308cf04135a72cff281354f9bde323bfff8a7925de7"
+  }
+}
