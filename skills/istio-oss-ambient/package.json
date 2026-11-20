@@ -9,13 +9,13 @@
     "path": "skills/istio-oss-ambient",
     "commit": null,
     "state": "content-addressed",
-    "content_sha256": "9c692e6ca98401ddbce99d8b62b0177dfd11ac19845534f9c45e2ec9873a59a7"
+    "content_sha256": "606f49d08807a85d1e784d9c63480d63010bfa5e1b88a79967904cecfceffb42"
   },
   "documentation": "https://ambientmesh.io/docs/",
   "files_sha256": {
-    "SKILL.md": "084c1b260a667614764adca6b70e70580b9b3da566ea0207dfc604cd974a4513",
-    "references/deployment.md": "d140670134d4ce8310dd613a018534ce2570c5170a69a84f9ae7ebc5b987c012",
-    "references/sources.md": "6e1b944c1f9c758f62356ba7c9a1e4c49b570bd697170e9d9a591b552bd9da91",
-    "references/verification.md": "90fd83f69ad6c49b077b2444d5e0bf7aab9958c7dce45e4120764bb8f007314f"
+    "SKILL.md": "c4aea858a524cdd3c9bcbdec41aa9d0524237849f4282b026287f8d1616adb60",
+    "references/deployment.md": "83b011a97d566e538b7bebddb2dbb6635e891d890ef6b84415d53773a1039af6",
+    "references/sources.md": "2bf02b024d034af72f3e628ff674d58f19de1636ddc5a178e2df57c83148490c",
+    "references/verification.md": "d857cb78aeb61dbfd137b585842b763f7167f4b7becaf39c020d486971e95b2d"
   }
 }

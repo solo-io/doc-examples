@@ -14,6 +14,12 @@ Ztunnel supplies the ambient L4 path and secure overlay. Add a [waypoint](https:
 
 Read the corresponding [L4 authorization](https://ambientmesh.io/docs/security/ztunnel-authz/) or [L7 authorization](https://ambientmesh.io/docs/security/waypoint-authz/) guide before writing a policy. Map source identities, destinations, paths, ports, and expected allow/deny behavior; account for NetworkPolicy and health probes. Stage restrictive policies with a rollback plan so a bad selector does not interrupt unrelated workloads.
 
+## Multicluster ambient
+
+For community ambient multicluster, follow the selected release's [upstream multicluster index](https://istio.io/latest/docs/ambient/install/multicluster/), [prerequisites](https://istio.io/latest/docs/ambient/install/multicluster/before-you-begin/), and supported topology guide. The current [multi-primary, different-network guide](https://istio.io/latest/docs/ambient/install/multicluster/multi-primary_multi-network/) gives each cluster its own `istiod`, uses a shared root of trust and remote secrets so each control plane can watch the other cluster's Kubernetes API, and routes cross-network workload traffic through ambient east-west gateways. Confirm cluster and network IDs, remote API reachability, certificate roots, gateway reachability, and ownership in every context before changing them. Protect remote kubeconfig secrets as credentials.
+
+The [ambientmesh.io multicluster overview](https://ambientmesh.io/docs/setup/multicluster/) is explicitly about Solo Enterprise for Istio: its xDS control-plane peering and global-service resources are a different architecture. Do not copy those Enterprise steps or describe multicluster itself as unavailable in community Istio.
+
 ## Upgrade or migrate
 
 Use the [ambient upgrade guide](https://ambientmesh.io/docs/operations/upgrade/) and the selected release notes. Upgrade the control plane and data plane in their documented order; confirm skew support before starting. For a sidecar mesh, use the [migration guide](https://ambientmesh.io/docs/setup/sidecar-migration/) and protect traffic continuity. Existing certificates, roots of trust, revisions, and GitOps owners are customer state, not disposable test data.

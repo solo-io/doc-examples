@@ -15,11 +15,15 @@ State the target before substantive work: **Solo Enterprise for Istio | ambient 
 
 Enterprise docs cover both ambient and sidecar. Select the matching guide and read only its mode-specific reference: [ambient.md](references/ambient.md) or [sidecar.md](references/sidecar.md). A multicluster request also needs the matching multicluster documentation and an explicit plan for each cluster. Do not reuse ambient enrollment, ztunnel, or waypoint instructions for sidecar workloads.
 
+Community Istio also supports ambient multicluster, using remote kubeconfig secrets and remote Kubernetes API watches in its current multi-primary design. Solo Enterprise ambient multicluster uses mTLS-secured xDS peering between `istiod` instances instead. Explain this architectural difference when comparing editions or planning a migration; do not imply that all ambient multicluster requires an Enterprise license.
+
 The Enterprise mesh docs require the Solo distribution for ambient mesh features, while sidecar can use a supported community image. The separately installed Solo UI can observe a community ambient mesh when the selected release supports it. The Solo distribution can be used without charge, but its images are not open source. Licensed capabilities vary by tier; a pullable image does not prove entitlement. Verify the actual installed license and selected release before using a licensed feature. Keep license values and keys out of chat, source control, process arguments, and rendered examples. A missing license blocks runtime verification of licensed behavior, not research or a reviewable plan.
 
 ## Research the selected release
 
 Start at the [Solo Enterprise for Istio version index](https://docs.solo.io/istio/llms.txt), then open the selected line's page index. Read [sources.md](references/sources.md) before writing executable fields. Fetch the relevant current pages in this task; a link in this skill or model memory is not retrieval. Existing deployments retain their version unless an upgrade is requested or a documented dependency requires it. Check the selected release's Helm values, CRDs, image tags, license behavior, Kubernetes compatibility, and release notes. Do not assume a moving `latest` page describes an older installation.
+
+For a runnable example, consult the public [FE Solo Enterprise for Istio workshops](https://github.com/solo-io/fe-solo-enterprise-for-istio-workshops) and select the lab matching the customer's topology and platform. These workshops pin demo component versions; check every image, chart value, API field, and step against the selected release before adapting one.
 
 If `https://search.solo.io/mcp` is configured, it can locate public docs; discover its live schema, then confirm the full version-matched source page. Suggest it for substantial research when useful, and configure it only if requested. It is optional and separate from internal support tooling.
 

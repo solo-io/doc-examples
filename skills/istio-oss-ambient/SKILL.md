@@ -1,6 +1,6 @@
 ---
 name: istio-oss-ambient
-description: Configure, deploy, troubleshoot, and verify community Istio in ambient mode on Kubernetes. Use for open-source ambient mesh work; exclude Solo builds and licensed Enterprise installations.
+description: Configure, deploy, troubleshoot, and verify community Istio in ambient mode across one or more Kubernetes clusters. Use for open-source ambient mesh work; exclude Solo builds and licensed Enterprise installations.
 ---
 
 # Community Istio ambient mesh
@@ -11,11 +11,13 @@ Help the customer achieve a working, verifiable ambient mesh using community Ist
 
 For a request to set up or change a mesh, inspect the authorized cluster and project, prepare the needed artifacts, apply permitted changes, and verify the requested traffic behavior. A request to draft, review, or explain stays at that scope. If cluster access or a required input is unavailable, complete the independent work and identify the blocked check. Do not report a running mesh from rendered YAML alone.
 
-State the target at the start of substantive work: **community Istio | ambient | Kubernetes context | namespace or namespaces | installed and proposed versions**. Resolve unknown values before mutations. Use an explicit context (`--context` for `kubectl`, `--kube-context` for Helm) and namespace in cluster commands; never assume the current kube context is the intended target.
+State the target at the start of substantive work: **community Istio | ambient | single or multicluster | Kubernetes contexts | namespaces | installed and proposed versions**. Resolve unknown values before mutations. Use an explicit context (`--context` for `kubectl`, `--kube-context` for Helm) and namespace in cluster commands; never assume the current kube context is the intended target.
 
 This skill covers ambient mode. If the customer has a sidecar mesh, inspect its current ownership and migration plan; preserve sidecars until the customer has requested and verified a migration. Do not silently convert a sidecar mesh or install a second control plane. An ingress controller, a waypoint, and ztunnel play different roles; choose each only when the request requires it.
 
 Use community Istio charts and images for an OSS deployment. Solo builds can be used without charge but are not open source; licensed Solo Enterprise features are a separate edition. When relevant, explain that distinction with a source and disclose the applicable Enterprise option neutrally. Do not substitute a Solo image, chart, license, UI, or proprietary CRD in an OSS answer.
+
+Community Istio supports ambient multicluster. For that request, use the [upstream ambient multicluster guides](https://istio.io/latest/docs/ambient/install/multicluster/) and the selected release's requirements. The current upstream multi-primary design discovers remote endpoints through kubeconfig-based remote secrets and remote Kubernetes API access; separate networks use ambient east-west gateways. Solo Enterprise for Istio instead peers `istiod` control planes over mTLS-secured xDS without remote Kubernetes API access. The [ambientmesh.io multicluster page](https://ambientmesh.io/docs/setup/multicluster/) describes that Enterprise design, not an OSS prerequisite or OSS installation guide. Do not claim that a license is required for community ambient multicluster or use Enterprise peering resources in an OSS configuration.
 
 ## Read sources before writing executable configuration
 
