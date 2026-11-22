@@ -4,6 +4,8 @@
 
 Inspect `helm list`, current Istio CRDs, namespaces, revisions, workloads, and Gateway API before choosing commands. The [ambientmesh.io Helm guide](https://ambientmesh.io/docs/setup/install/) installs Gateway API CRDs where needed, then the community `base`, `istiod` with the ambient profile, `cni` with the ambient profile, and `ztunnel` charts. Pin all charts and images to a compatible published release for a new deployment. Preserve existing Helm/GitOps release names and values on an update; review rendered differences, especially cluster-scoped CRDs, webhook selectors, revisions, CNI, and trust configuration.
 
+Before removing an existing `base` Helm release, inspect its manifest and the custom resources held under its CRDs. Uninstalling Helm-managed CRDs can delete those resources. Check the installed Gateway API bundle and its other consumers before applying one, and preserve a newer shared bundle. When changing a trust domain, inspect policies that name the old SPIFFE identities and plan their updates.
+
 Read the [requirements](https://ambientmesh.io/docs/setup/requirements/) and [production readiness](https://ambientmesh.io/docs/setup/production-readiness/) pages for the customer's Kubernetes platform. Do not infer that a working kind example is production-ready on every CNI or cloud.
 
 ## Enroll and route
