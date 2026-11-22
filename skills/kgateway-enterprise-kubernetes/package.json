@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "name": "kgateway-enterprise-kubernetes",
+  "channel": "current",
+  "edition": "enterprise",
+  "mode": "kubernetes",
+  "source": {
+    "repository": "https://github.com/solo-io/doc-examples",
+    "path": "skills/kgateway-enterprise-kubernetes",
+    "commit": null,
+    "state": "content-addressed",
+    "content_sha256": "1a401e682480d6477b4b65f35c59f5a1ea7f0e261499279f6cc02bd7b659e878"
+  },
+  "documentation": "https://docs.solo.io/kgateway/latest/",
+  "files_sha256": {
+    "SKILL.md": "effb754664b2c1c1686f6b83697795cefa4c8fdb8f8e1da52dbfcd9c2762b541",
+    "references/deployment.md": "cbea8f2fceee90be0013c952be576726c93a623571fc0436672ebdac59b77a66",
+    "references/sources.md": "cd2d705c370c4a7b28d9a5203427001c6e8b579c59ff663d0df582321c2b9e7c",
+    "references/verification.md": "b32535fe08643fa1d983a9d1370eafb19888449cfd6670377866198921c34a03"
+  }
+}

@@ -4,6 +4,8 @@
     "agentgateway-enterprise-standalone",
     "agentgateway-enterprise-kubernetes",
     "istio-oss-ambient",
-    "istio-enterprise-kubernetes"
+    "istio-enterprise-kubernetes",
+    "kgateway-oss-kubernetes",
+    "kgateway-enterprise-kubernetes"
   ]
 }

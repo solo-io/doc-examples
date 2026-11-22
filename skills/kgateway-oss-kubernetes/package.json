@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "name": "kgateway-oss-kubernetes",
+  "channel": "current",
+  "edition": "oss",
+  "mode": "kubernetes",
+  "source": {
+    "repository": "https://github.com/solo-io/doc-examples",
+    "path": "skills/kgateway-oss-kubernetes",
+    "commit": null,
+    "state": "content-addressed",
+    "content_sha256": "4612a4bccd55facd027a3c9b5ea3b2b7759411f299155971ecf38ac197141b33"
+  },
+  "documentation": "https://kgateway.dev/docs/envoy/latest/",
+  "files_sha256": {
+    "SKILL.md": "b6516ecb0180c4c391e02ed2d212ba49a479914ffd95208fd22bc0df8e9f4771",
+    "references/deployment.md": "846b0e0b3e16ac9aa88dde9f733b00d46b9de73cc9f5e4ab31abc19ce2e875e2",
+    "references/sources.md": "eb6efdf5a761dc550475f5769a0bd131e33023a93022ea2efa7f9514537da9f2",
+    "references/verification.md": "fce779bf252880a3ff063669041a145dc59e0b8e999f2611da1b788ae28d60ef"
+  }
+}
