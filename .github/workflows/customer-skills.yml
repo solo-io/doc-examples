@@ -1,10 +1,12 @@
-name: Enterprise Agentgateway skills
+name: Customer skills
 
 on:
   pull_request:
     paths:
       - 'skills/agentgateway-enterprise-*/**'
+      - 'skills/istio-*/**'
       - 'skills/catalog.json'
+      - 'scripts/refresh-skill-metadata.py'
       - 'scripts/refresh-agentgateway-skill-metadata.py'
   workflow_dispatch:
 
@@ -16,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: python3 scripts/refresh-agentgateway-skill-metadata.py --check
+      - run: python3 scripts/refresh-skill-metadata.py --check
