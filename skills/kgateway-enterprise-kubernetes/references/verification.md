@@ -6,4 +6,4 @@
 4. **Portal, if requested:** test the reachable URL, IdP login, and separate reader/admin permissions. Test an API subscription or generated credential only when requested and safe to create.
 5. **Handover:** distinguish completed checks from unrun checks, identify required secrets and infrastructure without exposing values, and give rollback commands limited to the task's resources.
 
-Use the selected line's [operations guidance](https://docs.solo.io/kgateway/latest/operations/) to isolate failures among exposure, listener, route, policy, extension, license, portal identity, or application.
+Use the selected line's [operations guidance](https://docs.solo.io/kgateway/latest/operations/index.md) to isolate failures among exposure, listener, route, policy, extension, license, portal identity, or application.

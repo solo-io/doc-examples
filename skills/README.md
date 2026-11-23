@@ -22,7 +22,7 @@ npx skills add https://github.com/solo-io/doc-examples --skill kgateway-oss-kube
 npx skills add https://github.com/solo-io/doc-examples --skill kgateway-enterprise-kubernetes --agent codex
 ```
 
-For Claude Code, use `--agent claude-code`. The installer places the selected complete folder in the project's skill directory. Installing a skill does not install the product.
+For Claude Code, use `--agent claude-code`. Keep `--skill` in the command: this repository also contains unrelated example skills, so repository-wide discovery lists more than the customer skills in this catalog. The installer places the selected complete folder in the project's skill directory. Installing a skill does not install the product.
 
 The skills read current public documentation for the selected runtime. Keep each complete skill folder together if installing manually. No private repository or internal support system is required by a customer.
 
