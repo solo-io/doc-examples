@@ -8,6 +8,8 @@ These public skill folders are the source for customer-facing assistant guides. 
 | [agentgateway-enterprise-kubernetes](agentgateway-enterprise-kubernetes/SKILL.md) | Enterprise Agentgateway Kubernetes controller, Gateway API, and CRDs |
 | [istio-oss-ambient](istio-oss-ambient/SKILL.md) | Community Istio in ambient mode on Kubernetes |
 | [istio-enterprise-kubernetes](istio-enterprise-kubernetes/SKILL.md) | Solo Enterprise for Istio on Kubernetes, in ambient or sidecar mode |
+| [kgateway-oss-kubernetes](kgateway-oss-kubernetes/SKILL.md) | Open-source kgateway with Envoy and Gateway API on Kubernetes |
+| [kgateway-enterprise-kubernetes](kgateway-enterprise-kubernetes/SKILL.md) | Solo Enterprise for kgateway with licensed gateway services and portal |
 
 From a project directory, install the skill you need. For example:
 
@@ -16,9 +18,11 @@ npx skills add https://github.com/solo-io/doc-examples --skill agentgateway-ente
 npx skills add https://github.com/solo-io/doc-examples --skill agentgateway-enterprise-kubernetes --agent codex
 npx skills add https://github.com/solo-io/doc-examples --skill istio-oss-ambient --agent codex
 npx skills add https://github.com/solo-io/doc-examples --skill istio-enterprise-kubernetes --agent codex
+npx skills add https://github.com/solo-io/doc-examples --skill kgateway-oss-kubernetes --agent codex
+npx skills add https://github.com/solo-io/doc-examples --skill kgateway-enterprise-kubernetes --agent codex
 ```
 
-For Claude Code, use `--agent claude-code`. The installer places the selected complete folder in the project's skill directory. Installing a skill does not install the product.
+For Claude Code, use `--agent claude-code`. Keep `--skill` in the command: this repository also contains unrelated example skills, so repository-wide discovery lists more than the customer skills in this catalog. The installer places the selected complete folder in the project's skill directory. Installing a skill does not install the product.
 
 The skills read current public documentation for the selected runtime. Keep each complete skill folder together if installing manually. No private repository or internal support system is required by a customer.
 

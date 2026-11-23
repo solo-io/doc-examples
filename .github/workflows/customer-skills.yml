@@ -5,6 +5,7 @@ on:
     paths:
       - 'skills/agentgateway-enterprise-*/**'
       - 'skills/istio-*/**'
+      - 'skills/kgateway-*/**'
       - 'skills/catalog.json'
       - 'scripts/refresh-skill-metadata.py'
       - 'scripts/refresh-agentgateway-skill-metadata.py'
