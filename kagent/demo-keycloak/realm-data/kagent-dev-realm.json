@@ -631,6 +631,57 @@
       "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
       "optionalClientScopes" : [ "address", "phone", "offline_access", "microprofile-jwt" ]
     }, {
+      "id" : "aab98693-9d97-4d7d-86c2-c73b1d4fe247",
+      "clientId" : "kagent-mcp",
+      "name" : "kagent MCP clients",
+      "description" : "Public PKCE client for MCP clients signing in to the local fleet's /mcp",
+      "enabled" : true,
+      "clientAuthenticatorType" : "client-secret",
+      "redirectUris" : [ "http://localhost:*", "http://127.0.0.1:*" ],
+      "webOrigins" : [ "+" ],
+      "bearerOnly" : false,
+      "consentRequired" : false,
+      "standardFlowEnabled" : true,
+      "implicitFlowEnabled" : false,
+      "directAccessGrantsEnabled" : false,
+      "serviceAccountsEnabled" : false,
+      "publicClient" : true,
+      "frontchannelLogout" : true,
+      "protocol" : "openid-connect",
+      "attributes" : {
+        "pkce.code.challenge.method" : "S256",
+        "use.refresh.tokens" : "true",
+        "display.on.consent.screen" : "false"
+      },
+      "fullScopeAllowed" : true,
+      "protocolMappers" : [ {
+        "id" : "74d64e0b-a871-46e6-bb92-4ad537c8f260",
+        "name" : "groups-to-claim",
+        "protocol" : "openid-connect",
+        "protocolMapper" : "oidc-group-membership-mapper",
+        "consentRequired" : false,
+        "config" : {
+          "full.path" : "false",
+          "id.token.claim" : "true",
+          "access.token.claim" : "true",
+          "claim.name" : "Groups",
+          "userinfo.token.claim" : "true"
+        }
+      }, {
+        "id" : "29673ae1-9cd3-4fde-a287-1d28afcdf6dd",
+        "name" : "kagent API audience",
+        "protocol" : "openid-connect",
+        "protocolMapper" : "oidc-audience-mapper",
+        "consentRequired" : false,
+        "config" : {
+          "included.custom.audience" : "kagent-enterprise-api",
+          "access.token.claim" : "true",
+          "id.token.claim" : "false"
+        }
+      } ],
+      "defaultClientScopes" : [ "web-origins", "acr", "profile", "roles", "email" ],
+      "optionalClientScopes" : [ "offline_access" ]
+    }, {
       "id" : "9755fd71-91d6-4211-be2d-d9dddcab1565",
       "clientId" : "realm-management",
       "name" : "${client_realm-management}",

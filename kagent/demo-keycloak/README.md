@@ -14,9 +14,10 @@ In a multicluster setup, run this script in the management cluster.
   * Creates a demo Keycloak installation that:
     * Uses an H2 database to store its internal configuration and user configuration.
     * Serves plain-text HTTP on port 8088 and TLS encrypted traffic on port 8443 for hostname `keycloak.default`.
-    * Creates clients for the UI frontend and backend:
-      * `kagent-ui` is a public access client that has an PKCE-enhanced authorization code flow, and maps user group membership to a custom claim called `Groups`. 
+    * Creates clients for the UI frontend, backend, and MCP clients:
+      * `kagent-ui` is a public access client that has a PKCE-enhanced authorization code flow, and maps user group membership to a custom claim called `Groups`.
       * `kagent-backend` is a confidential access client that is used by token validation in the UI backend.
+      * `kagent-mcp` is a public access client that has a PKCE-enhanced authorization code flow for MCP clients, and maps the `kagent-enterprise-api` audience into access tokens.
     * Defines the `admin`, `writer`, and `reader` accounts in the `kagent-dev` realm.
   * Creates Kubernetes service configuration for Keycloak in the targeted cluster. In a multicluster setup, this resource must be created in the management cluster where the `kagent-enterprise-ui` pod runs.
   * Creates a Kubernetes secret called `kagent-backend-secret` that stores the base64-encoded secret for the `kagent-backend` client.
